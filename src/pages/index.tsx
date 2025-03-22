@@ -1,18 +1,6 @@
 import { useState, useEffect } from "react";
 import handler from "./api/hello";
-
-type User = {
-	name: {
-		title: string;
-		first: string;
-		last: string;
-	};
-	email: string;
-	location: {
-		city: string;
-		state: string;
-	};
-};
+import { User } from "../utils/App.Types";
 
 export default function Home() {
 	const [userData, setUserData] = useState<User[] | undefined>([]);

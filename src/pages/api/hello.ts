@@ -1,14 +1,5 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-
-type User = {
-	name: {
-		title: string;
-		first: string;
-		last: string;
-	};
-	email: string;
-	city: string;
-};
+import { User } from "../../utils/App.Types";
 
 export default async function handler(): Promise<User[] | undefined> {
 	try {
