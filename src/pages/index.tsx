@@ -8,7 +8,10 @@ type User = {
 		last: string;
 	};
 	email: string;
-	city: string;
+	location: {
+		city: string;
+		state: string;
+	};
 };
 
 export default function Home() {
@@ -40,7 +43,8 @@ export default function Home() {
 								{user.name.first} {user.name.last}
 							</h1>
 							<p>{user.email}</p>
-							<p>{user.city}</p>
+							<p>{user.location.city}</p>
+							<p>{user.location.state}</p>
 						</div>
 					))
 				)}{" "}
