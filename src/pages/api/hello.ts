@@ -1,13 +1,11 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import type { NextApiRequest, NextApiResponse } from "next";
 
-type Data = {
-  name: string;
-};
-
-export default function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<Data>,
-) {
-  res.status(200).json({ name: "John Doe" });
+export default async function handler() {
+	try {
+		const response = await fetch("https://randomuser.me/api/?results=1");
+		const data = await response.json();
+		return data;
+	} catch (error) {
+		console.log(error);
+	}
 }
